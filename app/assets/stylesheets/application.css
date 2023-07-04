@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .card {
+  margin-bottom: 16px;
+ }
+
+ .card img{
+  padding: 8px;
+  border-radius: 4px;
+  max-height: 240px;
+  max-width: 240px;
+  object-fit: cover;
+ }

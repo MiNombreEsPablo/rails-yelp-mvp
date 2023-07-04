@@ -12,6 +12,13 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <%= link_to 'Yulp', restaurants_path, class: "navbar-brand" %>
+    </div>
+  </nav>
+  <div class="container-md">
     <%= yield %>
+  </div>
   </body>
 </html>
