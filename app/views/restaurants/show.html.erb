@@ -1,0 +1,35 @@
+<header class="hero-banner">
+  <!-- Add your hero banner content here -->
+  <div class="">
+    <h1><%= @restaurant.name %></h1><h2>/<%= @restaurant.category.capitalize %></h2>
+  </div>
+  <div class="profile-subheader rounded">
+  <p><%= raw "<i class=\"fa-solid fa-star\"></i>" * @average %> <%= @reviews.size %> reviews</p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  </div>
+</header>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card review-card">
+          <div class="card-body">
+            <h5 class="card-title">Review Title 1</h5>
+            <p class="card-text">Review description goes here.</p>
+            <p class="card-text">Rating: 4.5/5</p>
+            <p class="card-text">Posted by: John Doe</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card review-card">
+          <div class="card-body">
+            <h5 class="card-title">Review Title 2</h5>
+            <p class="card-text">Review description goes here.</p>
+            <p class="card-text">Rating: 3.8/5</p>
+            <p class="card-text">Posted by: Jane Smith</p>
+          </div>
+        </div>
+      </div>
+    </div>

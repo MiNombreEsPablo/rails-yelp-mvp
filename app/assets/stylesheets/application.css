@@ -14,14 +14,45 @@
  *= require_self
  */
 
- .card {
+.card {
   margin-bottom: 16px;
- }
+}
 
- .card img{
-  padding: 8px;
+.card img {
+  margin: 8px;
   border-radius: 4px;
   max-height: 240px;
   max-width: 240px;
   object-fit: cover;
- }
+}
+
+.hero-banner {
+  background-image: url('restaurant-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-banner h1, .hero-banner h2 {
+  text-shadow: 4px 4px 8px black;
+}
+
+.profile-subheader {
+  background-color: white;
+  margin: 16px;
+  padding: 16px;
+  color: black;
+}
+
+.profile-subheader i{
+  color: orangered;
+}
+
+.review-card {
+  margin-bottom: 20px;
+}

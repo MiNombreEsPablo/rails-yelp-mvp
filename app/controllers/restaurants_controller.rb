@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @reviews = Review.where(restaurant_id: @restaurant.id)
+    @average = @reviews.average(:rating)
   end
 
   def new
@@ -17,8 +18,11 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.save
-    redirect_to @restaurant
+    if @restaurant.save
+      redirect_to @restaurant
+    else
+      render :new
+    end
   end
 
   private
