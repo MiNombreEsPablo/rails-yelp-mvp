@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(restaurant_id: @restaurant.id)
+    @reviews = @restaurant.reviews
     @average = @reviews.average(:rating)
   end
 

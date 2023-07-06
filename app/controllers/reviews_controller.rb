@@ -1,9 +1,28 @@
-# frozen_string_literal: true
-
 class ReviewsController < ApplicationController
+  before_action :set_restaurant, only: %i[new create]
+
   def new
-    # We need @restaurant in our `simple_form_for`
+    @review = Review.new(restaurant_id: @restaurant.id)
+  end
+
+  def create
+    @review = Review.new(review_params)
+    @review.restaurant = @restaurant
+
+    if @review.save
+      redirect_to @restaurant
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = Review.new
+  end
+
+  def review_params
+    params.require(:review).permit(:restaurant_id, :content, :rating)
   end
 end

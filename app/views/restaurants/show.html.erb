@@ -10,26 +10,16 @@
   </div>
 </header>
 
+<div class="review-card-container">
+  <div class="review-menu">
+    <%= link_to '+ New review', new_restaurant_review_path(@restaurant.id), class: "btn btn-light" %>
+  </div>
+  <div class="reviews">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card review-card">
-          <div class="card-body">
-            <h5 class="card-title">Review Title 1</h5>
-            <p class="card-text">Review description goes here.</p>
-            <p class="card-text">Rating: 4.5/5</p>
-            <p class="card-text">Posted by: John Doe</p>
-          </div>
-        </div>
-      </div>
+      <% @reviews.each do |review| %>
+        <%= render "review", review: review %>
+      <% end %>
 
-      <div class="col-md-6">
-        <div class="card review-card">
-          <div class="card-body">
-            <h5 class="card-title">Review Title 2</h5>
-            <p class="card-text">Review description goes here.</p>
-            <p class="card-text">Rating: 3.8/5</p>
-            <p class="card-text">Posted by: Jane Smith</p>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="card d-flex flex-row" id="<%= dom_id restaurant %>">
   <%# <img src="app/assets/images/restaurant-image.jpg" class="card-img-left" alt="Restaurant Image"> %>
-  <%= image_tag("restaurant-image.jpg", class: "card-img-left rounded") %>
+  <%= image_tag(Faker::LoremFlickr.image(search_terms: ['restaurant', restaurant.category], match_all: true), class: "card-img-left rounded") %>
   <div class="card-body">
     <h5 class="card-title"><%= restaurant.name %></h5>
     <p class="card-text">Category: <%= restaurant.category %></p>
